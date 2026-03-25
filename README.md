@@ -58,7 +58,7 @@ The objective was to create a new coupon code by understanding how the coupons w
 I discovered that the websites chatbot seemed to have an interesting personality, it could be manipulated into revealing a 10% discount code if you begged it hard enough:
 <img width="975" height="209" alt="image" src="https://github.com/user-attachments/assets/f79fcba2-6950-4216-b8eb-ca2078b29e80" />
 
-after finding this first coupon i inserted the coupon into many decoders online in hopes of finding a form that made sense, recalling earlier source code where the 'z85' library was referenced, I successfully identified the string as being encoded in Z85(ASCII85).
+after finding this first coupon i inserted the coupon into many decoders online. Recalling earlier source code where the 'z85' library was referenced, I successfully identified the string as being encoded in Z85(ASCII85).
 <img width="351" height="271" alt="image" src="https://github.com/user-attachments/assets/633d83e5-8661-4f8a-a29b-d3c1e7782a1e" />
 
 Decoding the string revealed a specific hexadecimal pattern:
