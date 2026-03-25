@@ -26,6 +26,7 @@ By injecting the payload admin@juice-sh.op
 <img width="613" height="428" alt="image" src="https://github.com/user-attachments/assets/86a4c591-ef84-4c85-9ac9-c818a759529b" />
 
 I used the browser’s Developer Tools (F12) to access the local Storage and manually injected the stolen token. After refreshing the page, I was granted full administrative privileges:
+
 <img width="740" height="612" alt="image" src="https://github.com/user-attachments/assets/aed6145e-aa95-4d32-8f24-011c1ffa4a52" />
 
 This exploit confirms that the application relies solely on the client-side token for session management.
