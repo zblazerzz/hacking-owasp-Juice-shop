@@ -22,7 +22,7 @@ After finding it I navigated to the login page and used Burp Suite’s Intruder 
 <img width="975" height="522" alt="image" src="https://github.com/user-attachments/assets/1c639b62-d733-4c8b-9b28-a1fa5ea698fa" />
 
 By injecting the payload admin@juice-sh.op
-'-- into the email field, I successfully bypassed the login requirements, this immediately returned an authentication response with a length that was far above the usual error responses which raised a red flag for me, by accessing the response i found out that The server had given me access and returned the token for the administrator account :
+'-- into the email field, I successfully bypassed the login requirements, this immediately returned an authentication response with a length that was far above the usual error responses which raised a red flag for me, by accessing the response I found out that The server had given me access and returned the token for the administrator account :
 <img width="613" height="428" alt="image" src="https://github.com/user-attachments/assets/86a4c591-ef84-4c85-9ac9-c818a759529b" />
 
 I used the browser’s Developer Tools (F12) to access the local Storage and manually injected the stolen token. After refreshing the page, I was granted full administrative privileges:
