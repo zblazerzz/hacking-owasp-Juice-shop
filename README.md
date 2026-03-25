@@ -1,5 +1,5 @@
 # hacking-owasp-Juice-shop
-a not so detailed report showcasing the vulnerabilities found in OWASP's Juice shop by ziad.
+This report outlines the security vulnerabilities identified within the OWASP Juice Shop application during a penetration testing session.
 
 ## Overview
 
