@@ -81,7 +81,7 @@ Converting this to ASCII formulated:
 30 = 0
 ```
 
-Which shows a[MONTH][YEAR]-[DISCOUNT] format, as the previous code was a 10% off and ended with -10 i was able to speculate that the last numbers are the % discount. Using this template, I drafted a custom string for an 80% discount (MAR26-80) and re-encoded it to produce the new coupon: o*IVjhz3)x
+Which shows a [MONTH][YEAR]-[DISCOUNT] format, as the previous code was a 10% off and ended with -10 i was able to speculate that the last numbers are the % discount. Using this template, I drafted a custom string for an 80% discount (MAR26-80) and re-encoded it to produce the new coupon: o*IVjhz3)x
 <img width="1799" height="351" alt="image" src="https://github.com/user-attachments/assets/37be9fa5-3c3e-416d-a8b8-8057e9eaa9d9" />
 
 The forged coupon was successfully validated by the application, reducing the total order cost by 80%:
