@@ -1,7 +1,7 @@
 # hacking-owasp-Juice-shop
 a not so detailed report showcasing the vulnerabilities found in OWASP's Juice shop by ziad.
 
-Overview
+## Overview
 
 OWASP Juice Shop is an intentionally insecure web application designed for security training. It has over 100 vulnerabilities that can be exploited and can be run on localhost:3000. I used Docker to run it locally.
 
@@ -9,7 +9,7 @@ This penetration testing report documents the vulnerabilities I found and the st
 
 ## 1. Broken Access Control (SQL injection)
 
-description:
+**description:**
 Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification or destruction of all data, or performing a business function outside the user's limits.(https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/
 )
 
@@ -30,7 +30,7 @@ I used the browser’s Developer Tools (F12) to access the local Storage and man
 
 This exploit confirms that the application relies solely on the client-side token for session management.
 
-2. Cross-Site Scripting (XSS)
+## 2. Cross-Site Scripting (XSS)
 
 description:
 XSS attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. (https://owasp.org/www-community/attacks/xss/
@@ -47,7 +47,7 @@ knowing this I injected a basic JavaScript alert payload. The script executed im
 
 thisDOM XSS attack allows an attacker to steal session cookies, redirect users to malicious sites, or run malicious scripts for other users.
 
-3. Cryptographic Failures & Reverse Engineering
+## 3. Cryptographic Failures & Reverse Engineering
 
 Description:
 Cryptographic failure refers to the inadequate protection of sensitive data. Reverse engineering is the process of deconstructing software to understand its internal logic and exploit hidden vulnerabilities.
@@ -83,7 +83,7 @@ The forged coupon was successfully validated by the application, reducing the to
 
 This exploit allows unauthorized discounts, leading to significant financial loss for the shop.
 
-4. Parameter Tampering
+## 4. Parameter Tampering
 
 description:
 Parameter tampering involves manipulating the data exchanged between a client and a server to modify application behavior or data.
