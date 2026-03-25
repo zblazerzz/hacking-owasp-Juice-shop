@@ -41,12 +41,15 @@ XSS attacks are a type of injection, in which malicious scripts are injected int
 )
 
 After understanding how lacking the structure of the website was, i decided to start exploring all input fields for other sorts of injections, this is the moment where I identified a lack of Input Sanitization in the search bar. The application fails to verify or encode input before rendering it in the UI, therefore executing whatever code is entered.
+
 <img width="213" height="52" alt="image" src="https://github.com/user-attachments/assets/7f959ad7-9786-4850-ba2d-f3a3f8a29110" />
 
-By searching up <blabla> blabla i could see that that the HTML tags were rendered directly in the code rather than being escaped
+By searching up <blabla> blabla i could see that that the HTML tags were rendered directly in the code rather than being escaped:
+
 <img width="627" height="83" alt="image" src="https://github.com/user-attachments/assets/53301f86-0544-4287-bd0e-629736ea8226" />
 
 knowing this I injected a basic JavaScript alert payload. The script executed immediately with no errors returned.
+
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/ab8c361c-ae4d-484b-9823-9af4566dd712" />
 
 This DOM XSS attack allows an attacker to steal session cookies, redirect users to malicious sites, or run malicious scripts for other users.
