@@ -5,6 +5,9 @@ a not so detailed report showcasing the vulnerabilities found in OWASP's Juice s
 
 OWASP Juice Shop is an intentionally insecure web application designed for security training. It has over 100 vulnerabilities that can be exploited and can be run on localhost:3000. I used Docker to run it locally.
 
+<img width="1916" height="1079" alt="image" src="https://github.com/user-attachments/assets/c92c5f4e-79a0-442b-876a-b6b0af1224ba" />
+
+
 This penetration testing report documents the vulnerabilities I found and the steps I took to exploit them using Burp Suite. This is my first "proper" cybersecurity project where I put into practice the concepts I learned online, such as SQL injections, XSS attacks, and more. This report doesn't cover every single vulnerability in the shop—only the ones I was actually able to exploit.
 
 ## 1. Broken Access Control (SQL injection)
