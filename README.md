@@ -33,7 +33,7 @@ This exploit confirms that the application relies solely on the client-side toke
 
 ## 2. Cross-Site Scripting (XSS)
 
-description:
+**description:**
 XSS attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. (https://owasp.org/www-community/attacks/xss/
 )
 
@@ -50,7 +50,7 @@ thisDOM XSS attack allows an attacker to steal session cookies, redirect users t
 
 ## 3. Cryptographic Failures & Reverse Engineering
 
-Description:
+**Description:**
 Cryptographic failure refers to the inadequate protection of sensitive data. Reverse engineering is the process of deconstructing software to understand its internal logic and exploit hidden vulnerabilities.
 
 The objective was to create a new coupon code by understanding how the coupons were generated through reverse engineering.
@@ -86,7 +86,7 @@ This exploit allows unauthorized discounts, leading to significant financial los
 
 ## 4. Parameter Tampering
 
-description:
+**description:**
 Parameter tampering involves manipulating the data exchanged between a client and a server to modify application behavior or data.
 
 using Burp Suite's proxy interceptor I analyzed the communication between the client and server during the checkout process. For example when the client wanted to request more "apple juices" it would send a GET request and the server would respond with a POST by incrementing or decrementing the value of apple juices, but I observed that the application relies heavily on client-side logic for order quantities, allowing me to intercept and modify the "Quantity" parameter before it reached the backend.
