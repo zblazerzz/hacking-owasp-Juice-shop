@@ -9,7 +9,7 @@ This penetration testing report documents the vulnerabilities I found and the st
 
 ## 1. Broken Access Control (SQL injection)
 
-**description:**
+**Description:**
 Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification or destruction of all data, or performing a business function outside the user's limits.(https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/
 )
 
@@ -33,7 +33,7 @@ This exploit confirms that the application relies solely on the client-side toke
 
 ## 2. Cross-Site Scripting (XSS)
 
-**description:**
+**Description:**
 XSS attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. (https://owasp.org/www-community/attacks/xss/
 )
 
@@ -86,7 +86,7 @@ This exploit allows unauthorized discounts, leading to significant financial los
 
 ## 4. Parameter Tampering
 
-**description:**
+**Description:**
 Parameter tampering involves manipulating the data exchanged between a client and a server to modify application behavior or data.
 
 Using Burp Suite's proxy interceptor I analyzed the communication between the client and server during the checkout process. For example when the client wanted to request more "apple juices" it would send a GET request and the server would respond with a POST by incrementing or decrementing the value of apple juices, but I observed that the application relies heavily on client-side logic for order quantities, allowing me to intercept and modify the "Quantity" parameter before it reached the backend.
