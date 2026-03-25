@@ -55,7 +55,7 @@ Cryptographic failure refers to the inadequate protection of sensitive data. Rev
 
 The objective was to create a new coupon code by understanding how the coupons were generated through reverse engineering.
 
-I discovered that the websites chatbot seemed to have a a high temper, it could be manipulated into revealing a 10% discount code if you begged it hard enough:
+I discovered that the websites chatbot seemed to have an interesting personality, it could be manipulated into revealing a 10% discount code if you begged it hard enough:
 <img width="975" height="209" alt="image" src="https://github.com/user-attachments/assets/f79fcba2-6950-4216-b8eb-ca2078b29e80" />
 
 after finding this first coupon i inserted the coupon into many decoders online in hopes of finding a form that made sense, recalling earlier source code where the 'z85' library was referenced, I successfully identified the string as being encoded in Z85(ASCII85).
