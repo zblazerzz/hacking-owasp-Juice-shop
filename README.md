@@ -7,7 +7,7 @@ OWASP Juice Shop is an intentionally insecure web application designed for secur
 
 This penetration testing report documents the vulnerabilities I found and the steps I took to exploit them using Burp Suite. This is my first "proper" cybersecurity project where I put into practice the concepts I learned online, such as SQL injections, XSS attacks, and more. This report doesn't cover every single vulnerability in the shop—only the ones I was actually able to exploit.
 
-##1. Broken Access Control (SQL injection)
+## 1. Broken Access Control (SQL injection)
 
 description:
 Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification or destruction of all data, or performing a business function outside the user's limits.(https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/
