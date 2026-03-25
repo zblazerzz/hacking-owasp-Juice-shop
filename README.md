@@ -18,7 +18,7 @@ This vulnerability allowed for an Authentication Bypass, granting access to the 
 I identified the admin's email through a public review left on a product page:
 <img width="500" height="420" alt="image" src="https://github.com/user-attachments/assets/0a910f57-3ae3-438b-a8ff-50a03f0f5c3e"/>
 
-After finding it I navigated to the login page and used Burp Suite’s Intruder tool to intercept the request and automate a customized attack against the web application by inserting multiple payloads.I tested several payloads, such as ' OR 1=1 --, designed to manipulate the backend query logic to return a "true" value while commenting out the password verification.
+After finding it I navigated to the login page and used Burp Suite’s Intruder tool to intercept the request and automate a customized attack against the web application by inserting multiple payloads. I tested several payloads, such as ' OR 1=1 --, designed to manipulate the backend query logic to return a "true" value while commenting out the password verification.
 <img width="975" height="522" alt="image" src="https://github.com/user-attachments/assets/1c639b62-d733-4c8b-9b28-a1fa5ea698fa" />
 
 By injecting the payload admin@juice-sh.op
