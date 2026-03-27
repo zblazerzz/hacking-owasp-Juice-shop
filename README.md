@@ -113,6 +113,7 @@ This vulnerability allows an attacker to obtain products for free or manipulate 
 Obfuscation means to make something difficult to understand. Programming code is often obfuscated to protect intellectual property or trade secrets, and to prevent an attacker from reverse engineering a proprietary software program.(https://www.techtarget.com/searchsecurity/definition/obfuscation)
 
 This exploit involved discovering a hidden page that was not intended for user access. I first noticed the possibility of a hidden URL while reading through all the paths in the main javascript file, where I noticed two specific matchers labeled t$ and e$. The t$ matcher, in particular, stood out.
+
 <img width="658" height="529" alt="image" src="https://github.com/user-attachments/assets/3178c799-955c-4940-80ac-8d39ad01510e" />
 
 Following this discovery, I scanned the main.js file for other instances of t$ and found its definition:
