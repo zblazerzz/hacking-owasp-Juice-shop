@@ -106,6 +106,17 @@ By tampering with the request and changing the quantity to a negative value I su
 This vulnerability allows an attacker to obtain products for free or manipulate the store's financial records and inventory levels.
 
 
+## 5.Security through Obscurity
+
+**Description:**
+Obfuscation means to make something difficult to understand. Programming code is often obfuscated to protect intellectual property or trade secrets, and to prevent an attacker from reverse engineering a proprietary software program.(https://www.techtarget.com/searchsecurity/definition/obfuscation)
+
+This exploit consisted of finding a hidden page that wasnt supposed to be found by users. I first noticed the possibility of a hidden URL while reading through all the paths in the main javascript file, where i noticed two paths called t$ and e$, t$ especially seemed to catch my attention.
+<img width="658" height="529" alt="image" src="https://github.com/user-attachments/assets/3178c799-955c-4940-80ac-8d39ad01510e" />
+
+
+
+
 
 
 
