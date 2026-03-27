@@ -40,7 +40,7 @@ This exploit confirms that the application relies solely on the client-side toke
 XSS attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. (https://owasp.org/www-community/attacks/xss/
 )
 
-After understanding how lacking the structure of the website was, i decided to start exploring all input fields for other sorts of injections, this is the moment where I identified a lack of Input Sanitization in the search bar. The application fails to verify or encode input before rendering it in the UI, therefore executing whatever code is entered.
+After understanding how lacking the structure of the website was, i decided to start exploring all input fields for other sorts of injections, this is the moment where I identified a lack of Input Sanitization in the search bar. The application fails to verify or encode input before rendering it in the UI, therefore executing whatever code is entered. The objective here was to insert a javascript alert into the website.
 
 <img width="213" height="52" alt="image" src="https://github.com/user-attachments/assets/7f959ad7-9786-4850-ba2d-f3a3f8a29110" />
 
@@ -97,6 +97,7 @@ This exploit allows unauthorized discounts, leading to significant financial los
 **Description:**
 Parameter tampering involves manipulating the data exchanged between a client and a server to modify application behavior or data.
 
+The objective here was to manipulate the quantity of items in the store, by tricking the server.
 Using Burp Suite's proxy interceptor I analyzed the communication between the client and server during the checkout process. For example when the client wanted to request more "apple juices" it would send a GET request and the server would respond with a POST by incrementing or decrementing the value of apple juices, but I observed that the application relies heavily on client-side logic for order quantities, allowing me to intercept and modify the "Quantity" parameter before it reached the backend.
 <img width="975" height="550" alt="image" src="https://github.com/user-attachments/assets/9781077e-7ce2-46bc-8edd-ef8cab33e0a7" />
 
@@ -113,6 +114,39 @@ Obfuscation means to make something difficult to understand. Programming code is
 
 This exploit consisted of finding a hidden page that wasnt supposed to be found by users. I first noticed the possibility of a hidden URL while reading through all the paths in the main javascript file, where i noticed two paths called t$ and e$, t$ especially seemed to catch my attention.
 <img width="658" height="529" alt="image" src="https://github.com/user-attachments/assets/3178c799-955c-4940-80ac-8d39ad01510e" />
+
+following this find i scanned the main.js file for all other uses of t$ and only found one, in this case: 
+```
+function t$(t) {
+    return t.length === 0 ? null : t[0].toString().match(i$(25, 184, 174, 179, 182, 186) + "sal".toLowerCase() + a$(13, 144, 87, 152, 139, 144, 83, 138) + "a".toLowerCase()) ? {
+        consumed: t
+    } : null
+}
+```
+
+This function seemed to return something into the path, this something seemed to be a string that was made using the output of an i$ function, the word sal, the a$ function and the letter a all in lowercase. after attempting to decode the functions myself i found it to be pretty hard and time inducing to attempt to brute force this code. Therefore i resorted to the next possibility which was grabbing the i$, a$ and t$ functions and calling them in the console to see if they would return a proper result: 
+```
+function i$(...t) {
+    let n = Array.prototype.slice.call(t), e = n.shift();
+    return n.reverse().map(function(i, a) {
+        return String.fromCharCode(i - e - 45 - a)
+    }).join("")
+}
+
+function a$(...t) {
+    let n = Array.prototype.slice.call(t), e = n.shift();
+    return n.reverse().map(function(i, a) {
+        return String.fromCharCode(i - e - 45 - a)
+    }).join("")
+}
+```
+
+and after a few attemps in the console i managed to get a proper response from the console, therefore obtaining the URL for the hidden token sale page.
+<img width="975" height="780" alt="image" src="https://github.com/user-attachments/assets/6eef4623-d343-4d22-b2a8-189f2b3fa854" />
+<img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/568b2870-f66c-4811-915a-fb63975a772c" />
+
+This weakly protected and weakly obfuscated code risks users finding paths they arent supposed to access nor know of.
+
 
 
 
