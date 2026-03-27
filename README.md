@@ -112,10 +112,10 @@ This vulnerability allows an attacker to obtain products for free or manipulate 
 **Description:**
 Obfuscation means to make something difficult to understand. Programming code is often obfuscated to protect intellectual property or trade secrets, and to prevent an attacker from reverse engineering a proprietary software program.(https://www.techtarget.com/searchsecurity/definition/obfuscation)
 
-This exploit consisted of finding a hidden page that wasnt supposed to be found by users. I first noticed the possibility of a hidden URL while reading through all the paths in the main javascript file, where i noticed two paths called t$ and e$, t$ especially seemed to catch my attention.
+This exploit involved discovering a hidden page that was not intended for user access. I first noticed the possibility of a hidden URL while reading through all the paths in the main javascript file, where I noticed two specific matchers labeled t$ and e$. The t$ matcher, in particular, stood out.
 <img width="658" height="529" alt="image" src="https://github.com/user-attachments/assets/3178c799-955c-4940-80ac-8d39ad01510e" />
 
-following this find i scanned the main.js file for all other uses of t$ and only found one, in this case: 
+Following this discovery, I scanned the main.js file for other instances of t$ and found its definition:
 ```
 function t$(t) {
     return t.length === 0 ? null : t[0].toString().match(i$(25, 184, 174, 179, 182, 186) + "sal".toLowerCase() + a$(13, 144, 87, 152, 139, 144, 83, 138) + "a".toLowerCase()) ? {
@@ -124,7 +124,7 @@ function t$(t) {
 }
 ```
 
-This function seemed to return something into the path, this something seemed to be a string that was made using the output of an i$ function, the word sal, the a$ function and the letter a all in lowercase. after attempting to decode the functions myself i found it to be pretty hard and time inducing to attempt to brute force this code. Therefore i resorted to the next possibility which was grabbing the i$, a$ and t$ functions and calling them in the console to see if they would return a proper result: 
+This function seemed to return something into the path, this something seemed to be a string that was made using the output of an i$ function, the word sal, the a$ function and the letter a all in lowercase. After attempting to decode the functions myself i found it to be pretty hard and time inducing to attempt to brute force this code. I opted to redefine the i$, a$, and t$ functions directly within the browser console to observe their output:
 ```
 function i$(...t) {
     let n = Array.prototype.slice.call(t), e = n.shift();
@@ -141,11 +141,11 @@ function a$(...t) {
 }
 ```
 
-and after a few attemps in the console i managed to get a proper response from the console, therefore obtaining the URL for the hidden token sale page.
+After a few attemps in the console I successfully bypassed the obfuscation and obtained the hidden URL: tokensale-ico-ea.
 <img width="975" height="780" alt="image" src="https://github.com/user-attachments/assets/6eef4623-d343-4d22-b2a8-189f2b3fa854" />
 <img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/568b2870-f66c-4811-915a-fb63975a772c" />
 
-This weakly protected and weakly obfuscated code risks users finding paths they arent supposed to access nor know of.
+This weakly protected and poorly obfuscated code presents a security risk, as it allows users to discover and access internal paths that should remain restricted or hidden.
 
 
 
