@@ -125,7 +125,7 @@ function t$(t) {
 }
 ```
 
-This function seemed to return something into the path, this something seemed to be a string that was made using the output of an i$ function, the word sal, the a$ function and the letter a all in lowercase. After attempting to decode the functions myself i found it to be pretty hard and time inducing to attempt to brute force this code, as the logic relies on an algorithm where an array of integers is reversed and transformed into ASCII characters using the "key" provided as the first argument. Therefore I opted to redefine the i$, a$, and t$ functions directly within the browser console to observe their output:
+This function seemed to return something into the path, this something seemed to be a string that was made using the output of an i$ function, the word "sal", the a$ function and the letter "a" all in lowercase. After attempting to decode the functions myself i found it to be pretty hard and time inducing to attempt to brute force this code, as the logic relies on an algorithm where an array of integers is reversed and transformed into ASCII characters using the "key" provided as the first argument. Therefore I opted to redefine the i$, a$, and t$ functions directly within the browser console to observe their output:
 ```
 function i$(...t) {
     let n = Array.prototype.slice.call(t), e = n.shift();
@@ -146,7 +146,10 @@ After a few attemps in the console I successfully bypassed the obfuscation and o
 <img width="975" height="780" alt="image" src="https://github.com/user-attachments/assets/6eef4623-d343-4d22-b2a8-189f2b3fa854" />
 <img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/568b2870-f66c-4811-915a-fb63975a772c" />
 
-The reliance on client-side obfuscation provides a false sense of security, as this weakly protected and poorly obfuscated code presents a security risk, as it allows users to discover and access internal paths that should remain restricted or hidden.
+The reliance on client-side obfuscation provides a false sense of security, this weakly protected and poorly obfuscated code presents a security risk, as it allows users to discover and access internal paths that should remain restricted or hidden.
+
+## 6.Metadata Derived Security Question Bypass
+
 
 
 
