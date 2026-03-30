@@ -107,7 +107,7 @@ By tampering with the request and changing the quantity to a negative value I su
 This vulnerability allows an attacker to obtain products for free or manipulate the store's financial records and inventory levels.
 
 
-## 5.Security through Obscurity
+## 5. Security through Obscurity
 
 **Description:**
 Obfuscation means to make something difficult to understand. Programming code is often obfuscated to protect intellectual property or trade secrets, and to prevent an attacker from reverse engineering a proprietary software program.(https://www.techtarget.com/searchsecurity/definition/obfuscation)
@@ -148,10 +148,25 @@ After a few attemps in the console I successfully bypassed the obfuscation and o
 
 The reliance on client-side obfuscation provides a false sense of security, this weakly protected and poorly obfuscated code presents a security risk, as it allows users to discover and access internal paths that should remain restricted or hidden.
 
-## 6.Metadata Derived Security Question Bypass
+## 6. Metadata Derived Security Question Bypass
 
+**Description:**
+Metadata is data that is "invisible" can exist within a file, it can describe content, origin, and characteristics.  It includes details like file creation dates, author names, data structures, and technical specifications and etc.
 
+The objective was to gain unauthorized access to a user's account by bypassing a security question asking: "What is my favourite hiking spot?". The plan was to analyze an image the user had posted on the websites photo wall of him taking a hike to see if it had any leftover metadata that could help me get past his security question. By processing the uploaded image through a metadata extraction tool https://www.metadata2go.com. I retrieved the following embedded EXIF data:
 
+```
+Thumbnailimage: (Binary data 4531 bytes)
+ Gpslatitude: 36 deg 57' 31.38" N
+ Gpslongitude: 84 deg 20' 53.58" W
+ Gpsposition: 36 deg 57' 31.38" N, 84 deg 20' 53.58" WF
+```
+
+By inputting these geographic coordinates into Google Maps, I was able to pinpoint the specific area where the photo was taken:
+<img width="975" height="525" alt="image" src="https://github.com/user-attachments/assets/f3e83dcd-e7f5-401b-a2d2-507ae045defe" />
+
+Finally, I used a targeted brute-force attack (trial and error) on all nearby landmarks and park names identified in the mapped area. Using Burp Suite’s Repeater tool to automate the security question submissions. Once I identified the correct response, The server then returned a successful response, confirming the password had been changed and granting full access to the account.
+<img width="975" height="352" alt="image" src="https://github.com/user-attachments/assets/36b2b021-c08d-4e7b-8085-61d93e442706" />
 
 
 
