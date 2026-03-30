@@ -169,7 +169,7 @@ Finally, I used a targeted brute-force attack (trial and error) on all nearby la
 <img width="975" height="352" alt="image" src="https://github.com/user-attachments/assets/36b2b021-c08d-4e7b-8085-61d93e442706" />
 
 
-**Final Assessment**
+## Final Assessment
 OWASP's Juice Shop contained a multitude of vulnerabilities, ranging from low-risk information leaks to high-severity flaws that could compromise both the user base and the corporate infrastructure. Ultimately, these findings suggest that without implementing proper security that entails rigorous server side validation, automatic metadata stripping, proper code minification, any application could be susceptible to targeted exploitation. 
 
 
