@@ -151,7 +151,7 @@ The reliance on client-side obfuscation provides a false sense of security, this
 ## 6. Metadata Derived Security Question Bypass
 
 **Description:**
-Metadata is data that is "invisible" can exist within a file, it can describe content, origin, and characteristics.  It includes details like file creation dates, author names, data structures, and technical specifications and etc.
+Metadata is data that is "invisible" within a file, it can describe content, origin, and characteristics.  It includes details like file creation dates, author names, data structures, and technical specifications and etc.
 
 The objective was to gain unauthorized access to a user's account by bypassing a security question asking: "What is my favourite hiking spot?". The plan was to analyze an image the user had posted on the websites photo wall of him taking a hike to see if it had any leftover metadata that could help me get past his security question. By processing the uploaded image through a metadata extraction tool https://www.metadata2go.com. I retrieved the following embedded EXIF data:
 
