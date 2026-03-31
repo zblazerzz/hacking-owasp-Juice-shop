@@ -44,7 +44,7 @@ After understanding how lacking the structure of the website was, i decided to s
 
 <img width="213" height="52" alt="image" src="https://github.com/user-attachments/assets/7f959ad7-9786-4850-ba2d-f3a3f8a29110" />
 
-By searching up <blabla> blabla i could see that that the HTML tags were rendered directly in the code rather than being escaped:
+By searching up <blabla> blabla, i could see that the HTML tags were rendered directly in the code rather than being escaped:
 
 <img width="627" height="83" alt="image" src="https://github.com/user-attachments/assets/53301f86-0544-4287-bd0e-629736ea8226" />
 
